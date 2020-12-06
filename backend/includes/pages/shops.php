@@ -9,14 +9,18 @@ $owners = $db->where('is_admin', 0)->get('shop_owners');
 include_once('includes/data.php');
 
 global $floor_data;
+
+//if(isset($_SESSION['response'])){
+//    var_dump($_SESSION['response']);
+//}
 ?>
 
 <?php if (count($shops) > 0): ?>
     <div class="row justify-content-end">
-        <button type="button" class="btn btn-primary" onclick="setFormVisibility()">Добавить магазин</button>
+        <button type="button" class="btn btn-primary" onclick="setFormShopsVisibility()">Добавить магазин</button>
     </div>
 
-    <form id="form" style="height: 0;" class="mt-3 mb-3 invisible" method="POST" action="lib/fill_db.php"
+    <form id="form_shops" style="height: 0;" class="mt-3 mb-3 invisible" method="POST" action="lib/fill_db.php"
           enctype="multipart/form-data">
         <input type="hidden" value="shops" name="table">
         <div class="form-group">
@@ -70,6 +74,7 @@ global $floor_data;
             <th scope="col">Имя владельца</th>
             <th scope="col">Этаж</th>
             <th scope="col">Сектор</th>
+            <th scope="col"></th>
         </tr>
         </thead>
         <tbody>
@@ -80,7 +85,8 @@ global $floor_data;
                 <td><?= $shop['description'] ?></td>
                 <?php if ($shop['images'] != ''): ?>
                     <td>
-                        <img src="assets/images/<?= $shop['id'] ?>/<?= $shop['images'] ?>" alt="images" height="35" width="35">
+                        <img src="assets/images/<?= $shop['id'] ?>/<?= $shop['images'] ?>" alt="images" height="35"
+                             width="35">
                     </td>
                 <?php else: ?>
                     <td>
@@ -91,6 +97,13 @@ global $floor_data;
                 <td><?= $shop['first_name'] . ' ' . $shop['last_name'] ?></td>
                 <td><?= $shop['floor'] ?></td>
                 <td><?= $shop['sector'] ?></td>
+                <td>
+                    <form action="lib/remove_db.php" method="POST">
+                        <input type="hidden" value="<?= $shop['id'] ?>" name="shop_id">
+                        <input type="hidden" value="shops" name="table">
+                        <button type="submit" class="btn btn-danger">X</button>
+                    </form>
+                </td>
             </tr>
         <?php endforeach; ?>
         </tbody>
@@ -161,15 +174,15 @@ global $floor_data;
         }
     })
 
-    function setFormVisibility() {
-        if (document.getElementById('form').classList.contains('invisible')) {
-            document.getElementById('form').classList.remove('invisible')
-            document.getElementById('form').classList.add('visible')
-            document.getElementById('form').style.height = "100%"
+    function setFormShopsVisibility() {
+        if (document.getElementById('form_shops').classList.contains('invisible')) {
+            document.getElementById('form_shops').classList.remove('invisible')
+            document.getElementById('form_shops').classList.add('visible')
+            document.getElementById('form_shops').style.height = "100%"
         } else {
-            document.getElementById('form').classList.remove('visible')
-            document.getElementById('form').classList.add('invisible')
-            document.getElementById('form').style.height = "0"
+            document.getElementById('form_shops').classList.remove('visible')
+            document.getElementById('form_shops').classList.add('invisible')
+            document.getElementById('form_shops').style.height = "0"
         }
     }
 </script>

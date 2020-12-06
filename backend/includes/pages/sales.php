@@ -6,14 +6,15 @@ $sales = $db->join('shops', 'shops.id = sales.shop_id')->get('sales', null, 'sal
 $db = getDbInstance();
 $shops = $db->get('shops');
 
-if($_SESSION['response']){
-    var_dump($_SESSION['response']);
-}
-
 ?>
 
-<?php if (count($sales) > 0): ?>S
-    <form id="form" class="mt-3 mb-3 invisible" method="POST" style="height: 0;" action="lib/fill_db.php"
+<?php if (count($sales) > 0): ?>
+    <div class="pl-3 pr-3 mb-3 row justify-content-between">
+        <h3 class="font-weight-light text-left">Количество акций: <?= count($sales) ?></h3>
+        <button type="button" class="btn btn-primary" onclick="setFormSalesVisibility()">Добавить акцию</button>
+    </div>
+
+    <form id="form_sales" class="mt-3 mb-3 invisible" method="POST" style="height: 0;" action="lib/fill_db.php"
           enctype="multipart/form-data">
         <input type="hidden" value="sales" name="table">
         <div class="form-group">
@@ -58,6 +59,7 @@ if($_SESSION['response']){
             <th scope="col">Описание акции</th>
             <th scope="col">Изображения</th>
             <th scope="col">Скидка</th>
+            <th scope="col"></th>
         </tr>
         </thead>
         <tbody>
@@ -77,6 +79,13 @@ if($_SESSION['response']){
                     </td>
                 <?php endif; ?>
                 <td><?= $sale['discount'] ?></td>
+                <td>
+                    <form action="lib/remove_db.php" method="POST">
+                        <input type="hidden" value="<?= $sale['id'] ?>" name="sale_id">
+                        <input type="hidden" value="sales" name="table">
+                        <button type="submit" class="btn btn-danger">X</button>
+                    </form>
+                </td>
             </tr>
         <?php endforeach; ?>
         </tbody>
@@ -125,15 +134,15 @@ if($_SESSION['response']){
 <?php endif; ?>
 
 <script>
-    function setFormVisibility() {
-        if (document.getElementById('form').classList.contains('invisible')) {
-            document.getElementById('form').classList.remove('invisible')
-            document.getElementById('form').classList.add('visible')
-            document.getElementById('form').style.height = "100%"
+    function setFormSalesVisibility() {
+        if (document.getElementById('form_sales').classList.contains('invisible')) {
+            document.getElementById('form_sales').classList.remove('invisible')
+            document.getElementById('form_sales').classList.add('visible')
+            document.getElementById('form_sales').style.height = "100%"
         } else {
-            document.getElementById('form').classList.remove('visible')
-            document.getElementById('form').classList.add('invisible')
-            document.getElementById('form').style.height = "0"
+            document.getElementById('form_sales').classList.remove('visible')
+            document.getElementById('form_sales').classList.add('invisible')
+            document.getElementById('form_sales').style.height = "0"
         }
     }
 </script>

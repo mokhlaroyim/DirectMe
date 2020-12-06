@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f8f9ecd5-5483-43f1-8d27-68f7c9a22b84" name="Default Changelist" comment="" />
+    <list default="true" id="f8f9ecd5-5483-43f1-8d27-68f7c9a22b84" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/includes/pages/sales.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/includes/pages/sales.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/includes/pages/shop_owners.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/includes/pages/shop_owners.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/includes/pages/shops.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/includes/pages/shops.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/lib/fill_db.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/lib/fill_db.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -9,6 +16,9 @@
   </component>
   <component name="ComposerSettings">
     <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="JsFlowSettings">
     <service-enabled>true</service-enabled>
@@ -44,7 +54,8 @@
       <updated>1607086683913</updated>
       <workItem from="1607086684945" duration="10609000" />
       <workItem from="1607175548546" duration="3786000" />
-      <workItem from="1607235415174" duration="8522000" />
+      <workItem from="1607235415174" duration="9289000" />
+      <workItem from="1607252260062" duration="3312000" />
     </task>
     <servers />
   </component>
@@ -56,6 +67,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="740" y="282" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1607086819792" />
+    <state x="667" y="139" width="585" height="801" key="find.popup" timestamp="1607252518999">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="667" y="139" width="585" height="801" key="find.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1607252518999" />
     <state x="623" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1607095294422">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
