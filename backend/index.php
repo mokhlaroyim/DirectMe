@@ -36,7 +36,7 @@ include_once('includes/header.php');
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="#">Профиль</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Выйти</a>
+                <a class="dropdown-item" href="logout.php">Выйти</a>
             </div>
         </li>
     </ul>

@@ -170,7 +170,7 @@ function store_shops($data)
         die;
     }
 
-    if (empty($_FILES)) {
+    if (empty($_FILES) || !isset($_FILES['images'])) {
         $_SESSION['response'] = [
             'status' => 'error',
             'message' => 'Картинка не указана',
